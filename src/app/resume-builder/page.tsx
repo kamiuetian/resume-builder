@@ -54,21 +54,21 @@ export default function Create() {
       }
     }
   }, []);
-  const [showPreview, setShowPreview] = useState(false);
+  const [showPreview, setShowPreview] = useState<"none" | "for-desktop" | "for-mobile">("none");
 
   return (
     <Provider store={store}>
-      <main className="relative h-full w-full overflow-hidden bg-gray-50">
+      <main className="relative h-full w-full overflow-hidden bg-white">
         <div className="flex flex-col-reverse md:flex-row">
           <div className="basis-1/2">
             <ResumeForm />
           </div>
           <div className="basis-1/2">
-            <Resume />
+            <Resume openPreview={showPreview} setOpenPreview={setShowPreview} />
             <PreviewResumeModal isOpen={showPreview} setShowPreviewModal={setShowPreview} />
             <button
               className="block md:hidden"
-              onClick={() => setShowPreview(!showPreview)}
+              onClick={() => setShowPreview("for-mobile")}
             >
               <PreviewResumeButton />
             </button>

@@ -5,7 +5,8 @@ import { useSetDefaultScale } from "components/Resume/hooks";
 import {
   MagnifyingGlassIcon,
   ArrowDownTrayIcon,
-  EnvelopeIcon
+  EnvelopeIcon,
+  EyeIcon
 } from "@heroicons/react/24/outline";
 import { usePDF } from "@react-pdf/renderer";
 import dynamic from "next/dynamic";
@@ -59,6 +60,8 @@ const ResumeControlBar = ({
   documentSize,
   document,
   fileName,
+  openPreview,
+  setOpenPreview,
   forMobileOnly = false,
 }: {
   scale: number;
@@ -66,19 +69,20 @@ const ResumeControlBar = ({
   documentSize: string;
   document: JSX.Element;
   fileName: string;
+  openPreview: "none" | "for-desktop" | "for-mobile",
+  setOpenPreview: any,
   forMobileOnly?: boolean;
 }) => {
   const { scaleOnResize, setScaleOnResize } = useSetDefaultScale({
     setScale,
     documentSize,
   });
-
   const [instance, update] = usePDF({ document });
   const { data: session } = useSession();
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const [userBoughtSubscription, setUserBoughtSubscription] = useState(false);
+  // const [userBoughtSubscription, setUserBoughtSubscription] = useState(false);
 
   // Hook to update pdf when document changes
   useEffect(() => {
@@ -89,13 +93,12 @@ const ResumeControlBar = ({
     if (!session?.user) {
       // setShowSignUpModal(true);
       setShowLoginModal(true);
-
       return;
     }
-    else if (!userBoughtSubscription) {
-      setShowPaymentModal(true);
-      return;
-    }
+    // else if (!userBoughtSubscription) {
+    //   setShowPaymentModal(true);
+    //   return;
+    // }
 
     if (instance.url) {
       downloadFile(instance.url, fileName);
@@ -115,9 +118,9 @@ const ResumeControlBar = ({
     <div className={`${forMobileOnly ? "flex-col" : "flex-row"} sticky bottom-0 left-0 right-0 flex h-[var(--resume-control-bar-height)] items-center justify-center px-[var(--resume-padding)] text-gray-600 lg:justify-between`}>
       {showSignUpModal && (<SignUpModal isOpen={showSignUpModal} setShowLoginModal={setShowLoginModal} setShowSignUpModal={setShowSignUpModal} />)}
       {showLoginModal && (<LoginModal isOpen={showLoginModal} setShowLoginModal={setShowLoginModal} setShowSignUpModal={setShowSignUpModal} />)}
-      {showPaymentModal && <PaymentModal setUserBoughtSubscription={setUserBoughtSubscription} isOpen={showPaymentModal} setShowPaymentModal={setShowPaymentModal} />}
+      {/* {showPaymentModal && <PaymentModal setUserBoughtSubscription={setUserBoughtSubscription} isOpen={showPaymentModal} setShowPaymentModal={setShowPaymentModal} />} */}
 
-      <div className={`items-center gap-2 ${forMobileOnly ? "hidden" : "flex"}`}>
+      <div className={`items-center gap-2 ${forMobileOnly ? "hidden" : "hidden"}`}>
 
         <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
         <input
@@ -143,6 +146,7 @@ const ResumeControlBar = ({
           <span className="select-none">Autoscale</span>
         </label>
       </div>
+
       <div
         className={` ml-1 cursor-pointer flex items-center gap-1 rounded-md border border-gray-300 px-3 py-0.5 hover:bg-gray-100 lg:ml-8`}
         onClick={validateAndDownload}
@@ -156,6 +160,17 @@ const ResumeControlBar = ({
         <EnvelopeIcon className="h-4 w-4" />
         <span className="whitespace-nowrap">Generate Cover Letter</span>
       </Link>
+      <button
+        onClick={() => setOpenPreview(openPreview === "for-desktop" ? "none" : "for-desktop")}
+
+        className="ml-1 cursor-pointer flex items-center gap-1 rounded-md border border-gray-300 px-3 py-0.5 hover:bg-gray-100 lg:ml-8">
+        {/* <svg className="w-3 h-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
+          <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+        </svg> */}
+        <EyeIcon className="w-4 h-auto" />
+        <p>Preview Resume</p>
+      </button>
     </div >
   );
 };

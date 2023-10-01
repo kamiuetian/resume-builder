@@ -17,7 +17,7 @@ import {
 } from "components/fonts/hooks";
 import { NonEnglishFontsCSSLazyLoader } from "components/fonts/NonEnglishFontsCSSLoader";
 
-export const Resume = () => {
+export const Resume = ({ openPreview, setOpenPreview }: { openPreview: "none" | "for-desktop" | "for-mobile", setOpenPreview: any }) => {
   const [scale, setScale] = useState(0.8);
   const resume = useAppSelector(selectResume);
   const settings = useAppSelector(selectSettings);
@@ -56,6 +56,8 @@ export const Resume = () => {
             documentSize={settings.documentSize}
             document={document}
             fileName={resume.profile.name + " - Resume"}
+            openPreview={openPreview}
+            setOpenPreview={setOpenPreview}
           />
         </div>
         <ResumeControlBarBorder />

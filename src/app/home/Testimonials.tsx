@@ -66,9 +66,9 @@ export const Testimonials = ({ children }: { children?: React.ReactNode }) => {
   return (
     <section className="mx-auto -mt-2 px-8 pb-24">
       <h2 className="mb-8 text-center text-3xl font-bold">
-        People{" "}
-        <Image src={heartSrc} alt="love" className="-mt-1 inline-block w-7" />{" "}
-        WorkResume
+        Testimonials{" "}
+        {/* <Image src={heartSrc} alt="love" className="-mt-1 inline-block w-7" />{" "} */}
+
       </h2>
       <div className="mx-auto mt-10 h-[235px] max-w-lg lg:h-[400px] lg:pt-28">
         <div className="relative lg:ml-[-50px]">
@@ -77,7 +77,7 @@ export const Testimonials = ({ children }: { children?: React.ReactNode }) => {
             return (
               <div
                 key={idx}
-                className={`bg-primary absolute max-w-lg rounded-[1.7rem] bg-opacity-30 shadow-md transition-all duration-1000 ease-linear ${className}`}
+                className={`bg-primary shadow-primary absolute max-w-lg rounded-[1.7rem] bg-opacity-30 shadow-md transition-all duration-1000 ease-linear ${className}`}
                 onMouseEnter={() => {
                   if (className === "z-10") {
                     isHoveredOnTestimonial.current = true;
@@ -89,7 +89,7 @@ export const Testimonials = ({ children }: { children?: React.ReactNode }) => {
                   }
                 }}
               >
-                <figure className="m-1 flex gap-5 rounded-3xl bg-white p-5 text-gray-900 lg:p-7">
+                <figure className="m-[2px] flex gap-5 rounded-3xl bg-white p-5 text-gray-900 lg:p-7">
                   <Image
                     className="hidden h-24 w-24 select-none rounded-full lg:block"
                     src={src}

@@ -17,8 +17,8 @@ import {
 } from "components/fonts/hooks";
 import { NonEnglishFontsCSSLazyLoader } from "components/fonts/NonEnglishFontsCSSLoader";
 
-export const MobilePreview = () => {
-    const [scale, setScale] = useState(0.8);
+export const MobilePreview = ({ openPreview, setOpenPreview }: { openPreview: "none" | "for-desktop" | "for-mobile", setOpenPreview: any }) => {
+    const [scale, setScale] = useState(openPreview === "for-mobile" ? 0.8 : 2);
     const resume = useAppSelector(selectResume);
     const settings = useAppSelector(selectSettings);
     const document = useMemo(
@@ -39,7 +39,7 @@ export const MobilePreview = () => {
                         {/* @ts-ignore */}
                         <ResumeIframeCSR
                             documentSize={settings.documentSize}
-                            scale={0.45}
+                            scale={openPreview === "for-mobile" ? 0.45 : 1}
                             enablePDFViewer={DEBUG_RESUME_PDF_FLAG}
                         >
                             <ResumePDF
@@ -51,7 +51,7 @@ export const MobilePreview = () => {
                     </section>
                     {/* @ts-ignore */}
                     <ResumeControlBarCSR
-                        forMobileOnly={true}
+                        forMobileOnly={openPreview === "for-mobile" ? true : false}
                         scale={scale}
                         setScale={setScale}
                         documentSize={settings.documentSize}

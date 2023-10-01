@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const QAS = [
   {
     question:
@@ -58,17 +60,43 @@ const QAS = [
 export const QuestionsAndAnswers = () => {
   return (
     <section className="mx-auto max-w-3xl divide-y divide-gray-300 lg:mt-4 lg:px-2">
-      <h2 className="text-center text-3xl font-bold">Questions & Answers</h2>
-      <div className="mt-6 divide-y divide-gray-300">
-        {QAS.map(({ question, answer }) => (
-          <div key={question} className="py-6">
-            <h3 className="font-semibold leading-7">{question}</h3>
-            <div className="mt-3 grid gap-2 leading-7 text-gray-600">
-              {answer}
-            </div>
-          </div>
+      <h2 className="text-center text-3xl font-bold">Frequently Asked Questions</h2>
+      <div className="my-6">
+        {QAS.map(({ question, answer }, index) => (
+          <Accordion key={index} question={question} answer={answer} />
+          // <div key={question} className="py-6">
+          //   <h3 className="font-semibold leading-7">{question}</h3>
+          //   <div className="mt-3 grid gap-2 leading-7 text-gray-600">
+          //     {answer}
+          //   </div>
+          // </div>
         ))}
       </div>
     </section>
+
+
   );
 };
+
+
+function Accordion({ question, answer }: { question: string, answer: any }) {
+  const [open, setOpen] = useState(false);
+  return <>
+    <h2>
+      <button
+        onClick={() => setOpen(!open)}
+        type="button" className="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl hover:bg-gray-100">
+        <span>{question}</span>
+        <svg data-accordion-icon className={`w-3 h-3 ${open ? "" : "rotate-180"} shrink-0`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+        </svg>
+      </button>
+    </h2>
+    <div className={`${open ? "" : "hidden"}`} >
+      <div className="p-5 border border-b-0 border-gray-200 grid gap-2 leading-7 text-gray-600">
+        {/* <p className="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+        <p className="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" className="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p> */}
+        {answer}
+      </div>
+    </div></>
+}

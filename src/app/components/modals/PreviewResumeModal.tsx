@@ -4,8 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import { Resume } from 'components/Resume';
 import { MobilePreview } from 'components/Resume/MobilePreview';
 type Props = {
-    isOpen: boolean;
-    setShowPreviewModal: (value: boolean) => void;
+    isOpen: "none" | "for-desktop" | "for-mobile";
+    setShowPreviewModal: any;
 }
 
 const PreviewResumeModal = ({ isOpen, setShowPreviewModal }: Props) => {
@@ -13,7 +13,7 @@ const PreviewResumeModal = ({ isOpen, setShowPreviewModal }: Props) => {
     const ref = useRef(null);
 
     useEffect(() => {
-        if (isOpen) {
+        if (isOpen === "for-mobile") {
             if (ref.current) {
                 // @ts-ignore
                 ref.current.click();
@@ -23,24 +23,24 @@ const PreviewResumeModal = ({ isOpen, setShowPreviewModal }: Props) => {
 
     // to prevent background from being scrollable
     useEffect(() => {
-        document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+        document.body.style.overflow = isOpen === "for-mobile" || "for-desktop" ? 'hidden' : 'unset';
         return () => {
             document.body.style.overflow = 'unset';
         };
     }, [isOpen]);
 
-    if (!isOpen) return null;
+    if (isOpen === "none") return null;
 
     return (
         // Modal overlay
         <div className="fixed inset-0 z-50 overflow-auto bg-white bg-opacity-50 flex backdrop-blur-sm">
             {/* Modal */}
-            <div className="relative bg-white w-full max-w-md m-auto flex-col flex">
+            <div className={`relative bg-white w-full ${isOpen === "for-mobile" ? "max-w-md" : ""} m-auto flex-col flex`}>
                 {/* Content */}
                 <div className="modal-content">
                     <div className='w-full'>
                         <div
-                            onClick={() => setShowPreviewModal(false)}
+                            onClick={() => setShowPreviewModal("none")}
                             className="ml-auto w-8 h-8 p-1 cursor-pointer hover:text-black text-gray-400">
                             <svg
                                 focusable="false"
@@ -60,7 +60,7 @@ const PreviewResumeModal = ({ isOpen, setShowPreviewModal }: Props) => {
                         </div>
 
                         <div className="flex flex-col items-center w-full">
-                            <MobilePreview />
+                            <MobilePreview openPreview={isOpen} setOpenPreview={setShowPreviewModal} />
                         </div>
                     </div>
                 </div>

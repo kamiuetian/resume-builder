@@ -14,12 +14,14 @@ const Selection = ({
   style = {},
   onClick,
   children,
+
 }: {
   selectedColor: string;
   isSelected: boolean;
   style?: React.CSSProperties;
   onClick: () => void;
   children: React.ReactNode;
+
 }) => {
   const selectedStyle = {
     color: "white",
@@ -44,7 +46,8 @@ const Selection = ({
 };
 
 const SelectionsWrapper = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mt-2 flex flex-wrap gap-3">{children}</div>;
+  return <div className="mt-2 flex flex-wrap gap-3"
+  >{children}</div>;
 };
 
 const FontFamilySelections = ({
@@ -58,26 +61,50 @@ const FontFamilySelections = ({
 }) => {
   const allFontFamilies = getAllFontFamiliesToLoad();
   return (
-    <SelectionsWrapper>
-      {allFontFamilies.map((fontFamily, idx) => {
-        const isSelected = selectedFontFamily === fontFamily;
-        const standardSizePt = FONT_FAMILY_TO_STANDARD_SIZE_IN_PT[fontFamily];
-        return (
-          <Selection
-            key={idx}
-            selectedColor={themeColor}
-            isSelected={isSelected}
-            style={{
-              fontFamily,
-              fontSize: `${standardSizePt * PX_PER_PT}px`,
-            }}
-            onClick={() => handleSettingsChange("fontFamily", fontFamily)}
-          >
-            {FONT_FAMILY_TO_DISPLAY_NAME[fontFamily]}
-          </Selection>
-        );
-      })}
-    </SelectionsWrapper>
+    // handleSettingsChange("fontFamily", fontFamily)
+    // <SelectionsWrapper>
+    //   {allFontFamilies.map((fontFamily, idx) => {
+    //     const isSelected = selectedFontFamily === fontFamily;
+    //     const standardSizePt = FONT_FAMILY_TO_STANDARD_SIZE_IN_PT[fontFamily];
+    //     return (
+    //       <Selection
+    //         key={idx}
+    //         selectedColor={themeColor}
+    //         isSelected={isSelected}
+    //         style={{
+    //           fontFamily,
+    //           fontSize: `${standardSizePt * PX_PER_PT}px`,
+    //         }}
+    //         onClick={() => { handleSettingsChange("fontFamily", fontFamily) }}
+    //       >
+    //         {FONT_FAMILY_TO_DISPLAY_NAME[fontFamily]}
+    //       </Selection>
+    //     );
+    //   })}
+    // </SelectionsWrapper>
+    <div>
+      <select onChange={(e) => handleSettingsChange("fontFamily", e.target.value)}>
+        {allFontFamilies.map((fontFamily, idx) => {
+          const isSelected = selectedFontFamily === fontFamily;
+          const standardSizePt = FONT_FAMILY_TO_STANDARD_SIZE_IN_PT[fontFamily];
+          // selectedColor={themeColor}
+          // isSelected={isSelected}
+          return (
+            <option
+              key={idx}
+              // style={{
+              //   fontFamily,
+              //   fontSize: `${standardSizePt * PX_PER_PT}px`,
+              // }}
+              value={fontFamily}
+            // onClick={() => { handleSettingsChange("fontFamily", fontFamily) }}
+            >
+              {FONT_FAMILY_TO_DISPLAY_NAME[fontFamily]}
+            </option>
+          );
+        })}
+      </select>
+    </div>
   );
 };
 
@@ -107,26 +134,49 @@ export const FontSizeSelections = ({
   const compactSizePt = standardSizePt - 1;
 
   return (
-    <SelectionsWrapper>
+    // <SelectionsWrapper>
+    //   {["Compact", "Standard", "Large"].map((type, idx) => {
+    //     const fontSizePt = String(compactSizePt + idx);
+    //     const isSelected = fontSizePt === selectedFontSize;
+    //     return (
+    //       <Selection
+    //         key={idx}
+    //         selectedColor={themeColor}
+    //         isSelected={isSelected}
+    //         style={{
+    //           fontFamily,
+    //           fontSize: `${Number(fontSizePt) * PX_PER_PT}px`,
+    //         }}
+    //         onClick={() => handleSettingsChange("fontSize", fontSizePt)}
+    //       >
+    //         {type}
+    //       </Selection>
+    //     );
+    //   })}
+    // </SelectionsWrapper>
+
+    <select onChange={(e) => handleSettingsChange("fontSize", e.target.value)}>
       {["Compact", "Standard", "Large"].map((type, idx) => {
         const fontSizePt = String(compactSizePt + idx);
         const isSelected = fontSizePt === selectedFontSize;
         return (
-          <Selection
+          <option
             key={idx}
-            selectedColor={themeColor}
-            isSelected={isSelected}
-            style={{
-              fontFamily,
-              fontSize: `${Number(fontSizePt) * PX_PER_PT}px`,
-            }}
-            onClick={() => handleSettingsChange("fontSize", fontSizePt)}
+            value={fontSizePt}
           >
             {type}
-          </Selection>
+          </option>
         );
       })}
-    </SelectionsWrapper>
+    </select>
+    // selectedColor={themeColor}
+    // isSelected={isSelected}
+    // style={{
+    //   fontFamily,
+    //   fontSize: `${Number(fontSizePt) * PX_PER_PT}px`,
+    // }}
+
+
   );
 };
 
@@ -140,24 +190,48 @@ export const DocumentSizeSelections = ({
   handleSettingsChange: (field: GeneralSetting, value: string) => void;
 }) => {
   return (
-    <SelectionsWrapper>
-      {["Letter", "A4"].map((type, idx) => {
-        return (
-          <Selection
-            key={idx}
-            selectedColor={themeColor}
-            isSelected={type === selectedDocumentSize}
-            onClick={() => handleSettingsChange("documentSize", type)}
-          >
-            <div className="flex flex-col items-center">
-              <div>{type}</div>
-              <div className="text-xs">
-                {type === "Letter" ? "(US, Canada)" : "(other countries)"}
+    // <SelectionsWrapper>
+    //   {["Letter", "A4"].map((type, idx) => {
+    //     return (
+    //       <Selection
+    //         key={idx}
+    //         selectedColor={themeColor}
+    //         isSelected={type === selectedDocumentSize}
+    //         onClick={() => handleSettingsChange("documentSize", type)}
+    //       >
+    //         <div className="flex flex-col items-center">
+    //           <div>{type}</div>
+    //           <div className="text-xs">
+    //             {type === "Letter" ? "(US, Canada)" : "(other countries)"}
+    //           </div>
+    //         </div>
+    //       </Selection>
+    //     );
+    //   })}
+    // </SelectionsWrapper>
+
+    <div>
+      <select onChange={(e) => handleSettingsChange("documentSize", e.target.value)}>
+        {["Letter", "A4"].map((type, idx) => {
+          return (
+            <option
+              key={idx}
+              value={type}
+
+            // selectedColor={themeColor}
+            // isSelected={type === selectedDocumentSize}
+            // onClick={() => handleSettingsChange("documentSize", type)}
+            >
+              <div className="flex flex-col items-center ">
+                <div>{type}</div>
+                <div className="text-xs">
+                  {type === "Letter" ? "(US, Canada)" : "(other countries)"}
+                </div>
               </div>
-            </div>
-          </Selection>
-        );
-      })}
-    </SelectionsWrapper>
+            </option>
+          );
+        })}
+      </select>
+    </div>
   );
 };

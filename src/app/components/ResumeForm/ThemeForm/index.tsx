@@ -47,7 +47,7 @@ export const ThemeForm = () => {
             onChange={handleSettingsChange}
             inputStyle={{ color: themeColor }}
           />
-          <div className="mt-2 flex flex-wrap gap-2">
+          {/* <div className="mt-2 flex flex-wrap gap-2">
             {THEME_COLORS.map((color, idx) => (
               <div
                 className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-sm text-white"
@@ -63,9 +63,30 @@ export const ThemeForm = () => {
                 {settings.themeColor === color ? "✓" : ""}
               </div>
             ))}
-          </div>
+          </div> */}
+          <select
+            onChange={(e) => handleSettingsChange("themeColor", e.target.value)}
+            placeholder="Select a theme color"
+            className="mt-3 w-16 flex flex-wrap gap-2">
+            {THEME_COLORS.map((color, idx) => (
+              <option
+                className="flex h-14 p-6 w-16 cursor-pointer items-center justify-center rounded-md text-sm text-white"
+                style={{ backgroundColor: color }}
+                key={idx}
+                value={color}
+              // onClick={() => handleSettingsChange("themeColor", color)}
+              // onKeyDown={(e) => {
+              //   if (["Enter", " "].includes(e.key))
+              //     handleSettingsChange("themeColor", color);
+              // }}
+              // tabIndex={0}
+              >
+                {settings.themeColor === color ? "✓" : ""}
+              </option>
+            ))}
+          </select>
         </div>
-        <div>
+        <div className="flex flex-col space-y-3 w-fit">
           <InputGroupWrapper label="Font Family" />
           <FontFamilySelectionsCSR
             selectedFontFamily={fontFamily}
@@ -73,7 +94,7 @@ export const ThemeForm = () => {
             handleSettingsChange={handleSettingsChange}
           />
         </div>
-        <div>
+        <div className="flex flex-col space-y-3 w-fit">
           <InlineInput
             label="Font Size (pt)"
             name="fontSize"
@@ -88,7 +109,7 @@ export const ThemeForm = () => {
             handleSettingsChange={handleSettingsChange}
           />
         </div>
-        <div>
+        <div className="flex flex-col space-y-3 w-fit">
           <InputGroupWrapper label="Document Size" />
           <DocumentSizeSelections
             themeColor={themeColor}
