@@ -6,6 +6,10 @@ module.exports = {
       backgroundImage: {
         dot: "url('/assets/dots.svg')",
       },
+      colors: {
+        main: "#614CAA",
+        white: "#ffffff",
+      },
     },
   },
   corePlugins: {

@@ -73,10 +73,10 @@ export const TopNavBar = () => {
     >
       <div className="flex h-10 w-full items-center justify-between">
         <Link href="/">
-          <span className="sr-only">OpenResume</span>
+          <span className="sr-only">InstantJobCV</span>
           <Image
             src={logoSrc}
-            alt="OpenResume Logo"
+            alt="InstantJobCV Logo"
             className="h-8 w-full"
             priority
           />
@@ -99,7 +99,7 @@ export const TopNavBar = () => {
                 </Link>
 
                 <Link
-                  className="rounded-md btn-primary px-1.5 py-2 lg:px-4"
+                  className="rounded-md btn text-white bg-main px-1.5 py-2 lg:px-4"
                   href="/login"
                 >Login
                 </Link>
