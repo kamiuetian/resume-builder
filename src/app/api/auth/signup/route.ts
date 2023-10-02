@@ -5,7 +5,8 @@ import bcrypt from "bcrypt";
 
 
 const transporter = nodemailer.createTransport({
-    host: "instantjobcv.com",
+    service: 'Gmail',
+    host: "smtp.forwardemail.net",
     port: 465,
     secure: true,
     auth: {
