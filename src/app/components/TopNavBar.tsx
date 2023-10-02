@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import logoSrc from "public/logo.svg";
+import logoSrc from "public/logo.png";
 import { cx } from "lib/cx";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
