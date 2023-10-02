@@ -23,8 +23,8 @@ export async function GET(req: NextRequest) {
 }
 
 async function sendMail(verificationCode: string, email: string) {
-    const from = "MyResume <info@example.com>";
-    const subject = "MyResume Verification Code";
+    const from = "InstantJobCV";
+    const subject = "InstantJobCV Verification Code";
     const text = `Your verification code is ${verificationCode}.`;
 
     const mailOptions = {
