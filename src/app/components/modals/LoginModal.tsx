@@ -58,7 +58,7 @@ const LoginModal = ({ isOpen, setShowLoginModal, setShowSignUpModal }: Props) =>
             await signIn("google", { callbackUrl: "https://builder.instantjobcv.com?auth=google" });
             return;
         }
-        await signIn("google", { callbackUrl: "http://builder.instantjobcv.com?auth=google" });
+        await signIn("google", { callbackUrl: "https://builder.instantjobcv.com?auth=google" });
     }
 
     // to prevent background from being scrollable
