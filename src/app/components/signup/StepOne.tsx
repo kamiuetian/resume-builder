@@ -55,10 +55,10 @@ function StepOne({ updateStep, handler }: Props) {
             <div className="w-96 mx-auto flex justify-between mt-6">
                 <Link
                     href="/sign-up"
-                    className="bg-white px-6 py-2 font-semibold border-2 border-blue-500 text-blue-500 rounded-md text-lg">Back</Link>
+                    className="bg-white px-6 py-2 font-semibold border-2 border-bg-main text-blue-500 rounded-md text-lg">Back</Link>
                 <button
                     type='submit'
-                    className="bg-blue-600 px-6 py-2 font-semibold border-2 border-blue-500 text-white rounded-md text-lg">Continue</button>
+                    className="bg-main px-6 py-2 font-semibold border-2 border-bg-main text-white rounded-md text-lg">Continue</button>
             </div>
         </form>
 

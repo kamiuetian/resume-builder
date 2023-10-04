@@ -39,7 +39,7 @@ function StepTwo({ updateStep, handler }: Props) {
     }
 
     return <React.Fragment>
-        <h1 className="text-primary pb-2 text-4xl font-bold lg:text-5xl">
+        <h1 className="text-main pb-2 text-4xl font-bold lg:text-5xl">
             Log In
         </h1>
         <p className='text-lg font-medium text-gray-400 text-center mt-3'>
@@ -59,17 +59,17 @@ function StepTwo({ updateStep, handler }: Props) {
             <div className="w-96 mx-auto flex justify-between mt-6">
                 <button
                     onClick={() => { updateStep(1) }}
-                    className="bg-white px-6 py-2 font-semibold border-2 border-blue-500 text-blue-500 rounded-md text-lg">Back</button>
+                    className="bg-white px-6 py-2 font-semibold border-2 border-bg-main text-blue-500 rounded-md text-lg">Back</button>
 
                 {
                     loggingProgress ? (<button disabled
                         type="button"
-                        className="bg-blue-600 px-6 py-2 font-semibold border-2 border-blue-500 text-white rounded-md text-lg text-center ">
+                        className="bg-main px-6 py-2 font-semibold border-2 border-bg-main text-white rounded-md text-lg text-center ">
 
                         Signing in...
                     </button>) : (<button
                         type='submit'
-                        className="bg-blue-600 px-6 py-2 font-semibold border-2 border-blue-500 text-white rounded-md text-lg">Continue</button>
+                        className="bg-main px-6 py-2 font-semibold border-2 border-bg-main text-white rounded-md text-lg">Continue</button>
                     )
                 }
 

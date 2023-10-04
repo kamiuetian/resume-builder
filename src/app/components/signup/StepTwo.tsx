@@ -76,10 +76,10 @@ function StepTwo({ updateStep, handler }: Props) {
             <div className=" mx-auto w-96 flex justify-between mt-6">
                 <button
                     onClick={() => updateStep(1)}
-                    className="bg-white px-6 py-2 font-semibold border-2 border-blue-500 text-blue-500 rounded-md text-lg">Back</button>
+                    className="bg-white px-6 py-2 font-semibold border-2 border-bg-main text-blue-500 rounded-md text-lg">Back</button>
                 <button
                     type='submit'
-                    className="bg-blue-600 px-6 py-2 font-semibold border-2 border-blue-500 text-white rounded-md text-lg">Continue</button>
+                    className="bg-main px-6 py-2 font-semibold border-2 border-bg-main text-white rounded-md text-lg">Continue</button>
             </div>
         </form>
 

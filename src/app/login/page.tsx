@@ -22,7 +22,7 @@ async function LogInWithGoogle() {
 function Page({ }: Props) {
     return (
         <SignupLayout>
-            <h1 className="text-primary pb-2 text-4xl font-bold lg:text-5xl">
+            <h1 className="text-main pb-2 text-4xl font-bold lg:text-5xl">
                 Log In
 
             </h1>
