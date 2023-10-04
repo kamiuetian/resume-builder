@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import PreviewResumeModal from "components/modals/PreviewResumeModal";
-
+import {resumeFull} from 'FullResume'
 
 
 
@@ -45,7 +45,10 @@ export default function Create() {
     }
 
   }
-
+const keyToCheck:string = 'ijcv-resume-state';
+const isKeyExists = (key:string) => {
+    return localStorage.getItem(key) !== null;
+  };
   useEffect(() => {
     if (newlyGoogleAuthenticated) {
       //Save data in DB...
@@ -54,6 +57,13 @@ export default function Create() {
       }
     }
   }, []);
+  /**Set Default data */
+  useEffect(()=>{
+    console.log('useEffect')
+    if(!isKeyExists(keyToCheck)){
+      localStorage.setItem('ijcv-resume-state',JSON.stringify(resumeFull))
+    }
+  },[])
   const [showPreview, setShowPreview] = useState<"none" | "for-desktop" | "for-mobile">("none");
 
   return (

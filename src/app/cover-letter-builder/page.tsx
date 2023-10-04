@@ -18,7 +18,7 @@ function Page({ }: Props) {
             },
             body: JSON.stringify({
                 jobDescription: jobDescription,
-                resume: JSON.parse(localStorage.getItem("open-resume-state") ?? "").resume
+                resume: JSON.parse(localStorage.getItem("ijcv-resume-state") ?? "").resume
             })
         })
         const data = await res.json();

@@ -28,8 +28,8 @@ function ProtectedPage({ userEmail }: Props) {
     }
 
     function createNewResume() {
-        localStorage.removeItem("open-resume-id");
-        localStorage.setItem("open-resume-state", JSON.stringify(RESUME_RESETTED_INITIAL_STATE));
+        localStorage.removeItem("ijcv-resume-id");
+        localStorage.setItem("ijcv-resume-state", JSON.stringify(RESUME_RESETTED_INITIAL_STATE));
         router.push('/resume-builder');
     }
 

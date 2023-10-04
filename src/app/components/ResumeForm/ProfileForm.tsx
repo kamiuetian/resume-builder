@@ -20,7 +20,7 @@ export const ProfileForm = () => {
           label="Name"
           labelClassName="col-span-full"
           name="name"
-          placeholder="Sal Khan"
+          placeholder="DANI MARTINEZ"
           value={name}
           onChange={handleProfileChange}
         />
@@ -28,7 +28,9 @@ export const ProfileForm = () => {
           label="Objective"
           labelClassName="col-span-full"
           name="summary"
-          placeholder="Entrepreneur and educator obsessed with making education free for anyone"
+          placeholder="A strong team player experienced in maintaining working relationships with
+co-workers and supervisors by applying excellent organizational and management skills to help report
+client records to relevant departments daily."
           value={summary}
           onChange={handleProfileChange}
         />
@@ -36,7 +38,7 @@ export const ProfileForm = () => {
           label="Email"
           labelClassName="col-span-4"
           name="email"
-          placeholder="hello@khanacademy.org"
+          placeholder="info@instantjobcv.com"
           value={email}
           onChange={handleProfileChange}
         />
@@ -44,7 +46,7 @@ export const ProfileForm = () => {
           label="Phone"
           labelClassName="col-span-2"
           name="phone"
-          placeholder="(123)456-7890"
+          placeholder="+1 315-484-9321"
           value={phone}
           onChange={handleProfileChange}
         />
@@ -52,7 +54,7 @@ export const ProfileForm = () => {
           label="Website"
           labelClassName="col-span-4"
           name="url"
-          placeholder="linkedin.com/in/khanacademy"
+          placeholder="www.instantjobcv,com"
           value={url}
           onChange={handleProfileChange}
         />
@@ -60,7 +62,7 @@ export const ProfileForm = () => {
           label="Location"
           labelClassName="col-span-2"
           name="location"
-          placeholder="NYC, NY"
+          placeholder="Buckhannan, NY"
           value={location}
           onChange={handleProfileChange}
         />

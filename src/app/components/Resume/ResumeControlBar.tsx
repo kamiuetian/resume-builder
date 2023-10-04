@@ -102,9 +102,9 @@ const ResumeControlBar = ({
 
     if (instance.url) {
       downloadFile(instance.url, fileName);
-      const storageItem = JSON.parse(localStorage.getItem("open-resume-state") as string);
+      const storageItem = JSON.parse(localStorage.getItem("ijcv-resume-state") as string);
       if (storageItem) {
-        const resume_id = JSON.parse(localStorage.getItem("open-resume-id") as string);
+        const resume_id = JSON.parse(localStorage.getItem("ijcv-resume-id") as string);
         if (resume_id > 0) {
           updateExistingResume(resume_id, storageItem);
           return;

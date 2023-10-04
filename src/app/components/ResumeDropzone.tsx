@@ -146,7 +146,7 @@ export const ResumeDropzone = ({
             </div>
             <button
               type="button"
-              className="outline-theme-blue rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
+              className="outline-theme-purple rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
               title="Remove file"
               onClick={onRemove}
             >

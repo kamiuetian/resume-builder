@@ -6,8 +6,8 @@ import { RESUME_RESETTED_INITIAL_STATE } from "components/dashboard/ProjectTempl
 export const Hero = () => {
   const router = useRouter();
   function createNewResume() {
-    localStorage.removeItem("open-resume-id");
-    localStorage.setItem("open-resume-state", JSON.stringify(RESUME_RESETTED_INITIAL_STATE));
+    localStorage.removeItem("ijcv-resume-id");
+    localStorage.setItem("ijcv-resume-state", JSON.stringify(RESUME_RESETTED_INITIAL_STATE));
     router.push('/resume-builder');
   }
   return (

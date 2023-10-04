@@ -104,8 +104,8 @@ function ProjectTemplate({ resume }: Props) {
     const router = useRouter();
     const FullResume = JSON.parse(resume.full_resume);
     function handleResumeClick() {
-        localStorage.setItem("open-resume-state", JSON.stringify(FullResume));
-        localStorage.setItem("open-resume-id", resume.resume_id);
+        localStorage.setItem("ijcv-resume-state", JSON.stringify(FullResume));
+        localStorage.setItem("ijcv-resume-id", resume.resume_id);
         router.push('/resume-builder');
     }
     const date = new Date(resume.created_at);

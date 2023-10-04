@@ -1,4 +1,5 @@
 export const THEME_COLORS = [
+  "#000080", //Navy-blue
   "#f87171", // Red-400
   "#ef4444", // Red-500
   "#fb923c", // Orange-400

@@ -83,7 +83,7 @@ const SectionWithHeadingAndCreateButton = ({
       <div className="mt-5">
         <Link
           href="/resume-builder"
-          className="outline-theme-blue rounded-full bg-sky-500 px-6 pb-2 pt-1.5 text-base font-semibold text-white"
+          className="outline-theme rounded-full bg-sky-500 px-6 pb-2 pt-1.5 text-base font-semibold text-white"
         >
           {buttonText}
         </Link>
