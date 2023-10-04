@@ -85,7 +85,7 @@ export default function Create() {
 
 
 function PreviewResumeButton() {
-  return <div data-dial-init className="fixed right-6 bottom-6 group">
+  return <div data-dial-init className="fixed right-6 bottom-4 group">
     <button type="button" data-dial-toggle="speed-dial-menu-bottom-right" aria-controls="speed-dial-menu-bottom-right" aria-expanded="false" className="flex items-baseline space-x-3 rounded-md justify-center text-white bg-blue-700 py-2 px-5 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
       <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
         <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
