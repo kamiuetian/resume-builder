@@ -60,9 +60,9 @@ const isKeyExists = (key:string) => {
   /**Set Default data */
   useEffect(()=>{
     console.log('useEffect')
-    if(!isKeyExists(keyToCheck)){
+    /*if(!isKeyExists(keyToCheck)){
       localStorage.setItem('ijcv-resume-state',JSON.stringify(resumeFull))
-    }
+    }*/
   },[])
   const [showPreview, setShowPreview] = useState<"none" | "for-desktop" | "for-mobile">("none");
 
@@ -94,7 +94,7 @@ const isKeyExists = (key:string) => {
 
 function PreviewResumeButton() {
   return <div data-dial-init className="fixed right-6 bottom-4 group">
-    <button type="button" data-dial-toggle="speed-dial-menu-bottom-right" aria-controls="speed-dial-menu-bottom-right" aria-expanded="false" className="flex items-baseline space-x-3 rounded-md justify-center text-white bg-blue-700 py-2 px-5 hover:bg-blue-800 dark:bg-main dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+    <button type="button" data-dial-toggle="speed-dial-menu-bottom-right" aria-controls="speed-dial-menu-bottom-right" aria-expanded="false" className="flex items-baseline space-x-3 rounded-md justify-center text-white bg-main py-2 px-5 hover:bg-blue-800 dark:bg-main dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
       <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
         <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
         <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
