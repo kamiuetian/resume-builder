@@ -55,8 +55,8 @@ export const SkillsForm = () => {
             />
           </div>
         </div>
-        <div className="col-span-full mb-4 mt-6 border-t-2 border-dotted border-gray-200" />
-        <InputGroupWrapper
+        {/*<div className="col-span-full mb-4 mt-6 border-t-2 border-dotted border-gray-200" />
+        {/*<InputGroupWrapper
           label="Featured Skills (Optional)"
           className="col-span-full"
         >
@@ -64,9 +64,9 @@ export const SkillsForm = () => {
             Featured skills is optional to highlight top skills, with more
             circles mean higher proficiency.
           </p>
-        </InputGroupWrapper>
+  </InputGroupWrapper>*/}
 
-        {featuredSkills.map(({ skill, rating }, idx) => (
+        {/*featuredSkills.map(({ skill, rating }, idx) => (
           <FeaturedSkillInput
             key={idx}
             className="col-span-3"
@@ -78,7 +78,7 @@ export const SkillsForm = () => {
             placeholder={`Featured Skill ${idx + 1}`}
             circleColor={themeColor}
           />
-        ))}
+          ))*/}
       </div>
     </Form>
   );
