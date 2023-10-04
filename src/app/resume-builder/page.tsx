@@ -56,14 +56,15 @@ export default function Create() {
   }, []);
   const [showPreview, setShowPreview] = useState<"none" | "for-desktop" | "for-mobile">("none");
 
+  //UPDATE THIS CODE
   return (
     <Provider store={store}>
-      <main className="relative h-full w-full overflow-hidden bg-white">
-        <div className="flex flex-col-reverse md:flex-row">
-          <div className="basis-1/2">
+      <main className="relative h-full w-full">
+        <div className="flex flex-col-reverse md:flex-row ">
+          <div className="md:basis-1/2 basis-full ">
             <ResumeForm />
           </div>
-          <div className="basis-1/2">
+          <div className="md:basis-1/2 basis-full">
             <Resume openPreview={showPreview} setOpenPreview={setShowPreview} />
             <PreviewResumeModal isOpen={showPreview} setShowPreviewModal={setShowPreview} />
             <button
@@ -77,6 +78,7 @@ export default function Create() {
       </main>
     </Provider>
   );
+  //ABOVE THIS LINE
 }
 
 

@@ -31,12 +31,15 @@ export const ResumeForm = () => {
   const formsOrder = useAppSelector(selectFormsOrder);
   const [isHover, setIsHover] = useState(false);
 
+
+  //UPDATE THIS CODE
   return (
     <div
       className={cx(
-        "flex justify-center scrollbar scrollbar-track-gray-100 scrollbar-w-3 md:h-[calc(100vh-var(--top-nav-bar-height))] md:justify-end md:overflow-y-scroll",
+        "flex justify-center scrollbar scrollbar-track-gray-100 scrollbar-w-3 h-[calc(100vh-var(--top-nav-bar-height))] overflow-y-scroll",
         isHover && "scrollbar-thumb-gray-200"
       )}
+      // /ABOVE THIS LINE
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >

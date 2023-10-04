@@ -17,10 +17,10 @@ function Page({ }: Props) {
         const production = process.env.NODE_ENV === "production";
 
         if (production) {
-            await signIn("google", { callbackUrl: "https://builder.instantjobcv.com?auth=google" });
+            await signIn("google", { callbackUrl: "https://resumee-five.vercel.app/resume-builder?auth=google" });
             return;
         }
-        await signIn("google", { callbackUrl: "https://builder.instantjobcv.com?auth=google" });
+        await signIn("google", { callbackUrl: "http://localhost:3000/resume-builder?auth=google" });
     }
 
     return (
