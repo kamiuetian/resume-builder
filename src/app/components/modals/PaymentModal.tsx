@@ -176,7 +176,7 @@ const PaymentModal = ({ isOpen, setShowPaymentModal, setUserBoughtSubscription }
                                             alt="DP" loading="lazy" width="300" height="300" decoding="async" data-nimg="1" src="/assets/download.png" />
                                         <div>
                                             <p className="font-semibold">Awais Yusaf</p>
-                                            <p className="text-gray-400">OpenResume has been incredibly useful for me — love this App. It's saved me loads of time, and my resume look great!</p>
+                                            <p className="text-gray-400">InstantJobCV has been incredibly useful for me — love this App. It's saved me loads of time, and my resume look great!</p>
                                         </div>
                                     </div>
 

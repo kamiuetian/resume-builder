@@ -5,9 +5,9 @@ import { getServerSession } from "next-auth";
 import SessionContext from "lib/contexts/SessionContext";
 
 export const metadata = {
-  title: "OpenResume - Resume Builder and Parser",
+  title: "InstantJobCV - ",
   description:
-    "OpenResume is a free and powerful resume builder that allows anyone to create a modern professional resume in 3 simple steps. For those who have an existing resume, OpenResume also provides a resume parser to help test and confirm its ATS readability.",
+    "InstantJobCV is a free and powerful resume builder that allows anyone to create a modern professional resume.",
 };
 
 export default async function RootLayout({
