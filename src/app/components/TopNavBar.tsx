@@ -72,7 +72,7 @@ export const TopNavBar = () => {
       )}
     >
       <div className="flex h-10 w-full items-center justify-between">
-        <Link href="/">
+        <Link href="https://www.instantjobcv.com/">
           <span className="sr-only">InstantJobCV</span>
           <Image
             src={logoSrc}
