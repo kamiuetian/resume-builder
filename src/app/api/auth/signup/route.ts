@@ -10,8 +10,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'instantjobcv@gmail.com' as string,
-        pass: 'Allahhelpplease@success' as string
+        user: 'instantjobcv@gmail.com',
+        pass: 'Allahhelpplease@success'
     }
 });
 
