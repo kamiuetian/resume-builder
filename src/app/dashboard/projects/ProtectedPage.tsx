@@ -48,7 +48,7 @@ function ProtectedPage({ userEmail }: Props) {
             <SideBar />
             <div className='w-[80%] mx-auto my-12 pl-8 flex flex-col items-center space-y-6'>
                 <div className="text-center text-2xl font-semibold mt-24 text-gray-500">No resumes found</div>
-                <p onClick={createNewResume} className='btn-primary cursor-pointer'>Create your first resume <span aria-hidden="true">→</span></p>
+                <p onClick={createNewResume} className='border-round bg-main text-white cursor-pointer'>Create your first resume <span aria-hidden="true">→</span></p>
             </div>
         </div>
     }
@@ -67,7 +67,7 @@ function ProtectedPage({ userEmail }: Props) {
                                     Your previous projects are displayed below.
                                 </p>
                             </div>
-                            <p onClick={createNewResume} className='btn-primary h-fit cursor-pointer'>Create Resume</p>
+                            <p onClick={createNewResume} className='btn bg-main text-white h-fit cursor-pointer'>Create Resume</p>
 
 
                         </div>

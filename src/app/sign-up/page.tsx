@@ -26,7 +26,7 @@ function Page({ }: Props) {
     return (
         <SignupLayout>
             <h1 className="text-primary pb-2 text-4xl font-bold lg:text-5xl">
-                Sign Up for Your Resume Builder Account
+                Sign Up
             </h1>
             <p className="text-lg font-medium text-gray-400 text-center mt-3">
                 Pre-fill your resume with your social profile.

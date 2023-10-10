@@ -101,8 +101,10 @@ export const RESUME_RESETTED_INITIAL_STATE = {
 
 
 function ProjectTemplate({ resume }: Props) {
+    console.log(resume)
     const router = useRouter();
-    const FullResume = JSON.parse(resume.full_resume);
+    const FullResume = JSON.parse(resume.resume);
+    console.log(FullResume.settings)
     function handleResumeClick() {
         localStorage.setItem("ijcv-resume-state", JSON.stringify(FullResume));
         localStorage.setItem("ijcv-resume-id", resume.resume_id);

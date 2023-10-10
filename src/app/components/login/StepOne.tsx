@@ -53,7 +53,7 @@ function StepOne({ updateStep, handler }: Props) {
                     className="bg-main px-6 py-2 font-semibold border-2 border-bg-main text-white rounded-md text-lg">Continue</button>
             </div>
         </form>
-
+    <p className='mt-10 text-blue-500 cursor-pointer'>Forgot Password</p>
     </React.Fragment>
 }
 export default StepOne;

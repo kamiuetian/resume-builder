@@ -81,7 +81,7 @@ export const ThemeForm = () => {
               // }}
               // tabIndex={0}
               >
-                {settings.themeColor === color ? "✓" : ""}
+                {settings.themeColor === color ? `✓ ${color}` : `${color}`}
               </option>
             ))}
           </select>
