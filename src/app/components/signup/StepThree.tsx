@@ -44,9 +44,9 @@ function StepThree({ updateStep, handler }: Props) {
             },
             body: JSON.stringify(data),
         });
-
+        console.log(res)
         const json = await res.json();
-
+        
         if (json.status === "success" && json.codeSent) {
             updateStep(4);
         }

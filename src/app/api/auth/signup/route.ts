@@ -1,20 +1,9 @@
 import { execQuery } from "database/mysql";
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 import bcrypt from "bcrypt";
 
-
-const transporter = nodemailer.createTransport({
-    
-    host: "instantjobcv.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: 'instantjobcv@gmail.com',
-        pass: 'Allahhelpplease@success'
-    }
-});
-
+sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 export async function GET(req: NextRequest) {
     const RETRIEVE_USERS_QUERY = "SELECT * FROM Users";
@@ -27,45 +16,33 @@ async function sendMail(verificationCode: string, email: string) {
     const subject = "InstantJobCV Verification Code";
     const text = `Your verification code is ${verificationCode}.`;
 
-    const mailOptions = {
-        from,
+    const msg = {
         to: email,
+        from: from,
         subject: subject,
-        text: text
+        text: text,
     };
-    let isSent = false
 
-    await new Promise((resolve, reject) => {
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.log("Error sending mail", error)
-
-                reject(error);
-
-            } else {
-                isSent = true;
-                console.log("Mail sent successfully", info)
-                resolve(info);
-            }
-        });
-
-    })
-    return isSent;
+    try {
+        await sgMail.send(msg);
+        console.log("Mail sent successfully");
+        return true;
+    } catch (error) {
+        console.error("Error sending mail", error);
+        return false;
+    }
 }
 
-
-
 export async function POST(req: NextRequest) {
-    const ADD_USER_QUERY = "INSERT INTO Users (email,password_hash,first_name,last_name,phone_number,verification_code) VALUES (?,?,?,?,?,?)";
+    const ADD_USER_QUERY =
+        "INSERT INTO Users (email,password_hash,first_name,last_name,phone_number,verification_code) VALUES (?,?,?,?,?,?)";
 
     const data = await req.json();
 
     // Create password hash.
-
     const SALT = 10;
-
     const hashedPassword = bcrypt.hashSync(data.password, SALT);
-    const verificationCode = Math.random().toFixed(6).split('.')[1];
+    const verificationCode = Math.random().toFixed(6).split(".")[1];
     const isMailSent = await sendMail(verificationCode, data.email);
 
     const values = [data.email, hashedPassword, data.firstName, data.lastName, data.phoneNumber, verificationCode];
@@ -76,8 +53,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ status: "error", message: "User already exists." });
     }
 
-    // Insert user into database.
+    // Insert user into the database.
     const results = await execQuery({ query: ADD_USER_QUERY, values });
     return NextResponse.json({ status: "success", codeSent: isMailSent, message: "User created successfully.", results });
 }
-
