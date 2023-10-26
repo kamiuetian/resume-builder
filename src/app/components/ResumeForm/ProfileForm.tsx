@@ -28,9 +28,7 @@ export const ProfileForm = () => {
           label="Objective"
           labelClassName="col-span-full"
           name="summary"
-          placeholder="A strong team player experienced in maintaining working relationships with
-co-workers and supervisors by applying excellent organizational and management skills to help report
-client records to relevant departments daily."
+          placeholder="A strong team player experienced in maintaining working relationships with co-workers and supervisors by applying excellent organizational and management skills to help report client records to relevant departments daily."
           value={summary}
           onChange={handleProfileChange}
         />

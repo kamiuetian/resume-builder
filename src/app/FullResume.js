@@ -3,7 +3,7 @@ export const resumeFull = {
     profile: {
       name: "DANI MARTINEZ",
       summary:
-        "A strong team player experienced in maintaining working relationships with\nco-workers and supervisors by applying excellent organizational and management skills to help report client records to relevant departments daily.",
+        "A strong team player experienced in maintaining working relationships with co-workers and supervisors by applying excellent organizational and management skills to help report client records to relevant departments daily.",
       email: "info@instantjobcv.com",
       phone: "+1 315-484-9321",
       location: "Buckhannan, NY",
