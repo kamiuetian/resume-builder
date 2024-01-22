@@ -17,6 +17,8 @@ export default function Create() {
   const { data } = useSession();
   const searchParams = useSearchParams();
   const newlyGoogleAuthenticated = searchParams.get("auth") === "google";
+  const resumeType=searchParams.get("resumetype");
+  console.log(resumeType);
 
   async function saveSignUpData(user: any) {
     //Save data in DB;
