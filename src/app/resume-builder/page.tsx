@@ -21,6 +21,7 @@ export default function Create() {
   if(resumeType){
     const resumeRead = require(`../resume-templates-prebuild/${resumeType}`);
     localStorage.setItem("ijcv-resume-state", JSON.stringify(resumeRead));
+    console.log(resumeRead)
   }
 
   async function saveSignUpData(user: any) {
