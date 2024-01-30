@@ -18,11 +18,7 @@ export default function Create() {
   const searchParams = useSearchParams();
   const newlyGoogleAuthenticated = searchParams.get("auth") === "google";
   const resumeType=searchParams.get("resumetype");
-  if(resumeType){
-    const resumeRead = require(`../resume-templates-prebuild/${resumeType}`);
-    localStorage.setItem("ijcv-resume-state", JSON.stringify(resumeRead));
-    console.log(resumeRead)
-  }
+ 
 
   async function saveSignUpData(user: any) {
     //Save data in DB;
