@@ -15,6 +15,7 @@ export async function execQuery({ query, values }: { query: string, values?: any
     try {
         const results = await db.query(query, values);
         await db.end();
+        console.log(results)
         return results;
     } catch (error) {
         return { error };
