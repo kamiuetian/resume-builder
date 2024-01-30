@@ -1,0 +1,111 @@
+{
+  "resume": {
+    "profile": {
+      "name": "Munir Ahmed",
+      "summary": "Dedicated and results-driven Account Director with over a decade of experience in developing and executing strategic marketing initiatives. Proven track record of cultivating and maintaining strong client relationships, driving revenue growth, and leading cross-functional teams to deliver exceptional results. Seeking an opportunity to leverage my expertise in account management, strategic planning, and client satisfaction to contribute to the success of a dynamic organization.",
+      "email": "munir.developer93@gmail.com",
+      "phone": "+923354054505",
+      "location": "London, UK",
+      "url": "linkedin.com/munir"
+    },
+    "workExperiences": [
+      {
+        "company": "XYZ Marketing Agency",
+        "jobTitle": "Account Director",
+        "date": "January 2018 - Present",
+        "descriptions": [
+          "Spearhead strategic account planning and oversee the successful execution of integrated marketing campaigns for key clients, resulting in a 20% increase in annual revenue.",
+          "Fostered strong client relationships, serving as the main point of contact for key accounts, addressing concerns promptly, and ensuring client satisfaction.",
+          "Led a cross-functional team of 15 professionals, providing mentorship and guidance to achieve project objectives and deadlines."
+        ]
+      },
+      {
+        "company": "ABC Advertising",
+        "jobTitle": "Senior Account Manager",
+        "date": "June 2014 - December 2017",
+        "descriptions": [
+          "Developed and executed comprehensive marketing strategies for a diverse portfolio of clients, resulting in a 15% average increase in client satisfaction.",
+          "Collaborated with the creative and digital teams to conceptualize and implement innovative campaigns, including social media, content marketing, and email marketing initiatives."
+        ]
+      }
+    ],
+    "educations": [
+      {
+        "school": "University of XYZ",
+        "degree": "Bachelor of Business Administration in Marketing",
+        "gpa": "",
+        "date": "Graduated May 2014",
+        "descriptions": []
+      }
+    ],
+    "projects": [
+      {
+        "project": "ABC Corporation - Rebranding Campaign",
+        "date": "October 2022",
+        "descriptions": [
+          "Successfully managed the rebranding efforts for ABC Corporation, resulting in a 30% increase in brand visibility and a positive shift in brand perception."
+        ]
+      },
+      {
+        "project": "XYZ Tech Solutions - Product Launch",
+        "date": "January 2024",
+        "descriptions": [
+          "Directed the end-to-end launch of XYZ Tech's flagship product, coordinating with internal teams and achieving a 40% increase in product sales within the first quarter."
+        ]
+      }
+    ],
+    "skills": {
+      "featuredSkills": [
+        { "skill": "", "rating": 4 },
+        { "skill": "", "rating": 4 },
+        { "skill": "", "rating": 4 },
+        { "skill": "", "rating": 4 },
+        { "skill": "", "rating": 4 },
+        { "skill": "", "rating": 4 }
+      ],
+      "descriptions": [
+        "Strategic Account Management",
+        "Marketing Strategy Development",
+        "Team Leadership and Collaboration",
+        "Client Relationship Management",
+        "Project Planning and Execution",
+        "Market Research and Analysis",
+        "Budgeting and Financial Management"
+      ]
+    },
+    "custom": { "descriptions": [] }
+  },
+  "settings": {
+    "themeColor": "#000080",
+    "fontFamily": "Roboto",
+    "fontSize": "11",
+    "documentSize": "Letter",
+    "formToShow": {
+      "workExperiences": true,
+      "educations": true,
+      "projects": true,
+      "skills": true,
+      "custom": false
+    },
+    "formToHeading": {
+      "workExperiences": "WORK EXPERIENCE",
+      "educations": "EDUCATION",
+      "projects": "PROJECT",
+      "skills": "SKILLS",
+      "custom": "CUSTOM SECTION"
+    },
+    "formsOrder": [
+      "workExperiences",
+      "educations",
+      "projects",
+      "skills",
+      "custom"
+    ],
+    "showBulletPoints": {
+      "educations": true,
+      "projects": true,
+      "skills": true,
+      "custom": true
+    }
+  }
+}
